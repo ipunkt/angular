@@ -22,6 +22,6 @@ VOLUME /home/user
 ENV HOME="/home/user" \
 	NPM_CONFIG_PREFIX="/data/npm"
 
-RUN npm install -g angular-cli typings gulp
+RUN npm install -g angular-cli@webpack process-nextick-args util-deprecate typings gulp
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
