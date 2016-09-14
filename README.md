@@ -15,8 +15,12 @@ We included the following stuff:
 
 ## Usage
 
-  $> docker pull ipunktbs/angular
-
-  $> docker pull ipunktbs/angular:{TAG}
+```
+$> docker pull ipunktbs/angular
+```
+Or use a tag:
+```
+$> docker pull ipunktbs/angular:{TAG}
+```
 
 We prefer the last one to use a concrete image tag.
