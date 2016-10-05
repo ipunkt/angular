@@ -1,4 +1,4 @@
-FROM node:6.4.0
+FROM node:6.5.0
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 ENV GOSU_VERSION 1.9
@@ -17,11 +17,12 @@ RUN set -x \
 
 RUN mkdir -p /home/user && chmod 777 /home/user ; \
 	mkdir -p /data/npm && chmod 777 /data/npm
-	
+
 VOLUME /home/user
 ENV HOME="/home/user" \
 	NPM_CONFIG_PREFIX="/data/npm"
 
-RUN npm install -g angular-cli@webpack process-nextick-args util-deprecate typings gulp
+RUN npm install -g angular-cli@1.0.0-beta.11-webpack.8 process-nextick-args util-deprecate typings gulp \
+    && npm cache clean
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
